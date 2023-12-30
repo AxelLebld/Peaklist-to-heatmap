@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?><batch mzmine_version="3.9.0">
+    <batchstep method="io.github.mzmine.modules.dataprocessing.featdet_massdetection.MassDetectionModule" parameter_version="1">
+        <parameter name="Raw data files" type="GUI_SELECTED_FILES"/>
+        <parameter name="Scan filters" selected="true">
+            <parameter name="Scan number"/>
+            <parameter name="Base Filtering Integer"/>
+            <parameter name="Retention time"/>
+            <parameter name="Mobility"/>
+            <parameter name="MS level filter" selected="MS1, level = 1">1</parameter>
+            <parameter name="Scan definition"/>
+            <parameter name="Polarity">Any</parameter>
+            <parameter name="Spectrum type">ANY</parameter>
+        </parameter>
+        <parameter name="Scan types (IMS)">All scan types</parameter>
+        <parameter name="Mass detector" selected_item="Centroid">
+            <module name="Factor of lowest signal">
+                <parameter name="Noise factor">2.5</parameter>
+            </module>
+            <module name="Centroid">
+                <parameter name="Noise level">10000.0</parameter>
+                <parameter name="Detect isotope signals below noise level" selected="false">
+                    <parameter name="Chemical elements">H,C,N,O,S</parameter>
+                    <parameter name="m/z tolerance">
+                        <absolutetolerance>0.0015</absolutetolerance>
+                        <ppmtolerance>5.0</ppmtolerance>
+                    </parameter>
+                    <parameter name="Maximum charge of isotope m/z">2</parameter>
+                </parameter>
+            </module>
+            <module name="Exact mass">
+                <parameter name="Noise level">50.0</parameter>
+                <parameter name="Detect isotope signals below noise level" selected="false">
+                    <parameter name="Chemical elements">H,C,N,O,S</parameter>
+                    <parameter name="m/z tolerance">
+                        <absolutetolerance>0.0015</absolutetolerance>
+                        <ppmtolerance>5.0</ppmtolerance>
+                    </parameter>
+                    <parameter name="Maximum charge of isotope m/z">2</parameter>
+                </parameter>
+            </module>
+            <module name="Local maxima">
+                <parameter name="Noise level"/>
+            </module>
+            <module name="Recursive threshold">
+                <parameter name="Noise level"/>
+                <parameter name="Min m/z peak width"/>
+                <parameter name="Max m/z peak width"/>
+            </module>
+            <module name="Wavelet transform">
+                <parameter name="Noise level"/>
+                <parameter name="Scale level"/>
+                <parameter name="Wavelet window size (%)"/>
+            </module>
+            <module name="Auto">
+                <parameter name="Noise level">1000.0</parameter>
+                <parameter name="Detect isotope signals below noise level" selected="false">
+                    <parameter name="Chemical elements">H,C,N,O,S</parameter>
+                    <parameter name="m/z tolerance">
+                        <absolutetolerance>0.0015</absolutetolerance>
+                        <ppmtolerance>5.0</ppmtolerance>
+                    </parameter>
+                    <parameter name="Maximum charge of isotope m/z">2</parameter>
+                </parameter>
+            </module>
+        </parameter>
+        <parameter name="Denormalize fragment scans (traps)">false</parameter>
+        <parameter name="Output netCDF filename (optional)" selected="false"/>
+    </batchstep>
+    <batchstep method="io.github.mzmine.modules.dataprocessing.featdet_massdetection.MassDetectionModule" parameter_version="1">
+        <parameter name="Raw data files" type="GUI_SELECTED_FILES"/>
+        <parameter name="Scan filters" selected="true">
+            <parameter name="Scan number"/>
+            <parameter name="Base Filtering Integer"/>
+            <parameter name="Retention time"/>
+            <parameter name="Mobility"/>
+            <parameter name="MS level filter" selected="MS2, level = 2">2</parameter>
+            <parameter name="Scan definition"/>
+            <parameter name="Polarity">Any</parameter>
+            <parameter name="Spectrum type">ANY</parameter>
+        </parameter>
+        <parameter name="Scan types (IMS)">All scan types</parameter>
+        <parameter name="Mass detector" selected_item="Centroid">
+            <module name="Factor of lowest signal">
+                <parameter name="Noise factor">2.5</parameter>
+            </module>
+            <module name="Centroid">
+                <parameter name="Noise level">100.0</parameter>
+                <parameter name="Detect isotope signals below noise level" selected="false">
+                    <parameter name="Chemical elements">H,C,N,O,S,H,C,N,O,S</parameter>
+                    <parameter name="m/z tolerance">
+                        <absolutetolerance>0.0015</absolutetolerance>
+                        <ppmtolerance>5.0</ppmtolerance>
+                    </parameter>
+                    <parameter name="Maximum charge of isotope m/z">2</parameter>
+                </parameter>
+            </module>
+            <module name="Exact mass">
+                <parameter name="Noise level">50.0</parameter>
+                <parameter name="Detect isotope signals below noise level" selected="false">
+                    <parameter name="Chemical elements">H,C,N,O,S</parameter>
+                    <parameter name="m/z tolerance">
+                        <absolutetolerance>0.0015</absolutetolerance>
+                        <ppmtolerance>5.0</ppmtolerance>
+                    </parameter>
+                    <parameter name="Maximum charge of isotope m/z">2</parameter>
+                </parameter>
+            </module>
+            <module name="Local maxima">
+                <parameter name="Noise level"/>
+            </module>
+            <module name="Recursive threshold">
+                <parameter name="Noise level"/>
+                <parameter name="Min m/z peak width"/>
+                <parameter name="Max m/z peak width"/>
+            </module>
+            <module name="Wavelet transform">
+                <parameter name="Noise level"/>
+                <parameter name="Scale level"/>
+                <parameter name="Wavelet window size (%)"/>
+            </module>
+            <module name="Auto">
+                <parameter name="Noise level">1000.0</parameter>
+                <parameter name="Detect isotope signals below noise level" selected="false">
+                    <parameter name="Chemical elements">H,C,N,O,S</parameter>
+                    <parameter name="m/z tolerance">
+                        <absolutetolerance>0.0015</absolutetolerance>
+                        <ppmtolerance>5.0</ppmtolerance>
+                    </parameter>
+                    <parameter name="Maximum charge of isotope m/z">2</parameter>
+                </parameter>
+            </module>
+        </parameter>
+        <parameter name="Denormalize fragment scans (traps)">false</parameter>
+        <parameter name="Output netCDF filename (optional)" selected="false"/>
+    </batchstep>
+    <batchstep method="io.github.mzmine.modules.dataprocessing.featdet_adapchromatogrambuilder.ModularADAPChromatogramBuilderModule" parameter_version="1">
+        <parameter name="Raw data files" type="GUI_SELECTED_FILES"/>
+        <parameter name="Scan filters" selected="true">
+            <parameter name="Scan number"/>
+            <parameter name="Base Filtering Integer"/>
+            <parameter name="Retention time">
+                <min>0.0</min>
+                <max>8.0</max>
+            </parameter>
+            <parameter name="Mobility"/>
+            <parameter name="MS level filter" selected="MS1, level = 1">1</parameter>
+            <parameter name="Scan definition"/>
+            <parameter name="Polarity">Any</parameter>
+            <parameter name="Spectrum type">ANY</parameter>
+        </parameter>
+        <parameter name="Minimum consecutive scans">4</parameter>
+        <parameter name="Minimum intensity for consecutive scans">10000.0</parameter>
+        <parameter name="Minimum absolute height">20000.0</parameter>
+        <parameter name="m/z tolerance (scan-to-scan)">
+            <absolutetolerance>0.0</absolutetolerance>
+            <ppmtolerance>10.0</ppmtolerance>
+        </parameter>
+        <parameter name="Suffix">ADAP_33to96</parameter>
+        <parameter name="Allow single scan chromatograms"/>
+    </batchstep>
+    <batchstep method="io.github.mzmine.modules.dataprocessing.filter_rowsfilter.RowsFilterModule" parameter_version="2">
+        <parameter name="Feature lists" type="BATCH_LAST_FEATURELISTS"/>
+        <parameter name="Name suffix">FILT</parameter>
+        <parameter name="Minimum aligned features (samples)" selected="false">
+            <abs>1</abs>
+            <rel>0.0</rel>
+        </parameter>
+        <parameter name="Minimum features in an isotope pattern" selected="false">2</parameter>
+        <parameter name="Validate 13C isotope pattern" selected="false">
+            <parameter name="m/z tolerance">
+                <absolutetolerance>5.0E-4</absolutetolerance>
+                <ppmtolerance>10.0</ppmtolerance>
+            </parameter>
+            <parameter name="Max charge">1</parameter>
+            <parameter name="Estimate minimum carbon">true</parameter>
+            <parameter name="Remove if 13C">true</parameter>
+            <parameter name="Exclude isotopes">H,C,N,O,S</parameter>
+        </parameter>
+        <parameter name="Remove redundant isotope rows">false</parameter>
+        <parameter name="m/z" selected="false">
+            <min>169.0</min>
+            <max>170.0</max>
+        </parameter>
+        <parameter name="Retention time" selected="false">
+            <min>0.2</min>
+            <max>8.0</max>
+        </parameter>
+        <parameter name="features duration range" selected="false">
+            <min>0.0</min>
+            <max>3.0</max>
+        </parameter>
+        <parameter name="Chromatographic FWHM" selected="false">
+            <min>0.0</min>
+            <max>1.0</max>
+        </parameter>
+        <parameter name="Charge" selected="false">
+            <min>1</min>
+            <max>2</max>
+        </parameter>
+        <parameter name="Kendrick mass defect" selected="false">
+            <parameter name="Kendrick mass defect">
+                <min>0.0</min>
+                <max>1.0</max>
+            </parameter>
+            <parameter name="Kendrick mass base"/>
+            <parameter name="Shift">0.0</parameter>
+            <parameter name="Charge">1</parameter>
+            <parameter name="Divisor">1</parameter>
+            <parameter name="Use Remainder of Kendrick mass">false</parameter>
+        </parameter>
+        <parameter name="Parameter">No parameters defined</parameter>
+        <parameter name="Only identified?">false</parameter>
+        <parameter name="Text in identity" selected="false"/>
+        <parameter name="Text in comment" selected="false"/>
+        <parameter name="Keep or remove rows">Keep rows that match all criteria</parameter>
+        <parameter name="Feature with MS2 scan">true</parameter>
+        <parameter name="Never remove feature with MS2">true</parameter>
+        <parameter name="Reset the feature number ID">false</parameter>
+        <parameter name="Mass defect" selected="false"/>
+        <parameter name="Original feature list">KEEP</parameter>
+    </batchstep>
+    <batchstep method="io.github.mzmine.modules.dataprocessing.featdet_chromatogramdeconvolution.minimumsearch.MinimumSearchFeatureResolverModule" parameter_version="2">
+        <parameter name="Feature lists" type="BATCH_LAST_FEATURELISTS"/>
+        <parameter name="Suffix">RESOLV</parameter>
+        <parameter name="Original feature list">KEEP</parameter>
+        <parameter name="MS/MS scan pairing" selected="true">
+            <parameter name="MS1 to MS2 precursor tolerance (m/z)">
+                <absolutetolerance>0.0</absolutetolerance>
+                <ppmtolerance>10.0</ppmtolerance>
+            </parameter>
+            <parameter name="Retention time filter" selected="Use tolerance" unit="MINUTES">0.1</parameter>
+            <parameter name="Minimum relative feature height" selected="false">0.25</parameter>
+            <parameter name="Minimum required signals" selected="false">1</parameter>
+            <parameter name="Limit by ion mobility edges">false</parameter>
+            <parameter name="Merge MS/MS spectra (TIMS)">false</parameter>
+            <parameter name="Minimum signal intensity (absolute, TIMS)" selected="false">250.0</parameter>
+            <parameter name="Minimum signal intensity (relative, TIMS)" selected="false">0.01</parameter>
+        </parameter>
+        <parameter name="Dimension">Retention time</parameter>
+        <parameter name="Chromatographic threshold">0.9</parameter>
+        <parameter name="Minimum search range RT/Mobility (absolute)">0.03</parameter>
+        <parameter name="Minimum relative height">0.0</parameter>
+        <parameter name="Minimum absolute height">10000.0</parameter>
+        <parameter name="Min ratio of peak top/edge">1.02</parameter>
+        <parameter name="Peak duration range (min/mobility)">
+            <min>0.0</min>
+            <max>0.12</max>
+        </parameter>
+        <parameter name="Minimum scans (data points)">3</parameter>
+    </batchstep>
+    <batchstep method="io.github.mzmine.modules.dataprocessing.filter_isotopegrouper.IsotopeGrouperModule" parameter_version="1">
+        <parameter name="Feature lists" type="BATCH_LAST_FEATURELISTS"/>
+        <parameter name="Name suffix">DEISO</parameter>
+        <parameter name="m/z tolerance (intra-sample)">
+            <absolutetolerance>0.0</absolutetolerance>
+            <ppmtolerance>5.0</ppmtolerance>
+        </parameter>
+        <parameter name="Retention time tolerance" unit="MINUTES">0.01</parameter>
+        <parameter name="Mobility tolerance" selected="false"/>
+        <parameter name="Monotonic shape">false</parameter>
+        <parameter name="Maximum charge">1</parameter>
+        <parameter name="Representative isotope">Most intense</parameter>
+        <parameter name="Never remove feature with MS2">true</parameter>
+        <parameter name="Original feature list">KEEP</parameter>
+    </batchstep>
+    <batchstep method="io.github.mzmine.modules.dataprocessing.filter_rowsfilter.RowsFilterModule" parameter_version="2">
+        <parameter name="Feature lists" type="BATCH_LAST_FEATURELISTS"/>
+        <parameter name="Name suffix">FILT2_keramaphidin</parameter>
+        <parameter name="Minimum aligned features (samples)" selected="false">
+            <abs>1</abs>
+            <rel>0.0</rel>
+        </parameter>
+        <parameter name="Minimum features in an isotope pattern" selected="false">2</parameter>
+        <parameter name="Validate 13C isotope pattern" selected="false">
+            <parameter name="m/z tolerance">
+                <absolutetolerance>5.0E-4</absolutetolerance>
+                <ppmtolerance>10.0</ppmtolerance>
+            </parameter>
+            <parameter name="Max charge">1</parameter>
+            <parameter name="Estimate minimum carbon">true</parameter>
+            <parameter name="Remove if 13C">true</parameter>
+            <parameter name="Exclude isotopes">H,C,N,O,S</parameter>
+        </parameter>
+        <parameter name="Remove redundant isotope rows">false</parameter>
+        <parameter name="m/z" selected="false">
+            <min>169.0</min>
+            <max>170.0</max>
+        </parameter>
+        <parameter name="Retention time" selected="true">
+            <min>3.09</min>
+            <max>3.17</max>
+        </parameter>
+        <parameter name="features duration range" selected="false">
+            <min>0.0</min>
+            <max>3.0</max>
+        </parameter>
+        <parameter name="Chromatographic FWHM" selected="false">
+            <min>0.0</min>
+            <max>1.0</max>
+        </parameter>
+        <parameter name="Charge" selected="false">
+            <min>1</min>
+            <max>2</max>
+        </parameter>
+        <parameter name="Kendrick mass defect" selected="false">
+            <parameter name="Kendrick mass defect">
+                <min>0.0</min>
+                <max>1.0</max>
+            </parameter>
+            <parameter name="Kendrick mass base"/>
+            <parameter name="Shift">0.0</parameter>
+            <parameter name="Charge">1</parameter>
+            <parameter name="Divisor">1</parameter>
+            <parameter name="Use Remainder of Kendrick mass">false</parameter>
+        </parameter>
+        <parameter name="Parameter">No parameters defined</parameter>
+        <parameter name="Only identified?">false</parameter>
+        <parameter name="Text in identity" selected="false"/>
+        <parameter name="Text in comment" selected="false"/>
+        <parameter name="Keep or remove rows">Keep rows that match all criteria</parameter>
+        <parameter name="Feature with MS2 scan">true</parameter>
+        <parameter name="Never remove feature with MS2">false</parameter>
+        <parameter name="Reset the feature number ID">false</parameter>
+        <parameter name="Mass defect" selected="false"/>
+        <parameter name="Original feature list">KEEP</parameter>
+    </batchstep>
+    <batchstep method="io.github.mzmine.modules.dataprocessing.filter_rowsfilter.RowsFilterModule" parameter_version="2">
+        <parameter name="Feature lists" type="NAME_PATTERN">
+            <name_pattern>*ADAP_33to96 FILT RESOLV DEISO</name_pattern>
+        </parameter>
+        <parameter name="Name suffix">FILT2_iso</parameter>
+        <parameter name="Minimum aligned features (samples)" selected="false">
+            <abs>1</abs>
+            <rel>0.0</rel>
+        </parameter>
+        <parameter name="Minimum features in an isotope pattern" selected="false">2</parameter>
+        <parameter name="Validate 13C isotope pattern" selected="false">
+            <parameter name="m/z tolerance">
+                <absolutetolerance>5.0E-4</absolutetolerance>
+                <ppmtolerance>10.0</ppmtolerance>
+            </parameter>
+            <parameter name="Max charge">1</parameter>
+            <parameter name="Estimate minimum carbon">true</parameter>
+            <parameter name="Remove if 13C">true</parameter>
+            <parameter name="Exclude isotopes">H,C,N,O,S</parameter>
+        </parameter>
+        <parameter name="Remove redundant isotope rows">false</parameter>
+        <parameter name="m/z" selected="false">
+            <min>169.0</min>
+            <max>170.0</max>
+        </parameter>
+        <parameter name="Retention time" selected="true">
+            <min>4.0</min>
+            <max>4.08</max>
+        </parameter>
+        <parameter name="features duration range" selected="false">
+            <min>0.0</min>
+            <max>3.0</max>
+        </parameter>
+        <parameter name="Chromatographic FWHM" selected="false">
+            <min>0.0</min>
+            <max>1.0</max>
+        </parameter>
+        <parameter name="Charge" selected="false">
+            <min>1</min>
+            <max>2</max>
+        </parameter>
+        <parameter name="Kendrick mass defect" selected="false">
+            <parameter name="Kendrick mass defect">
+                <min>0.0</min>
+                <max>1.0</max>
+            </parameter>
+            <parameter name="Kendrick mass base"/>
+            <parameter name="Shift">0.0</parameter>
+            <parameter name="Charge">1</parameter>
+            <parameter name="Divisor">1</parameter>
+            <parameter name="Use Remainder of Kendrick mass">false</parameter>
+        </parameter>
+        <parameter name="Parameter">No parameters defined</parameter>
+        <parameter name="Only identified?">false</parameter>
+        <parameter name="Text in identity" selected="false"/>
+        <parameter name="Text in comment" selected="false"/>
+        <parameter name="Keep or remove rows">Keep rows that match all criteria</parameter>
+        <parameter name="Feature with MS2 scan">true</parameter>
+        <parameter name="Never remove feature with MS2">false</parameter>
+        <parameter name="Reset the feature number ID">false</parameter>
+        <parameter name="Mass defect" selected="false"/>
+        <parameter name="Original feature list">KEEP</parameter>
+    </batchstep>
+</batch>
