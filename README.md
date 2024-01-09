@@ -1,4 +1,4 @@
-# Heatmaps-from-MZmine
+# Peaklist-to-heatmap
 <p align="justify">This repository contains the code and the MZmine3 output files required to reproduce heatmaps used in our work related to manzamine alkaloids biosynthesis entitled "Baldwin and Whitehead's Manzamine Alkaloids Biosynthetic Hypothesis Would Imply a Finely Tuned Reactivity of C<sub>3</sub> Unit, an HTE Approach". MZmine3 batch files and probes MS/MS spectra (keramaphidin B scaffold and <i>iso</i>-scaffold) related to our work are also provided but they are not needed to use the code.</p>
 
 ## Description
