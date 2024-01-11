@@ -52,7 +52,7 @@ df_data_srt = df_data.sort_values(by='reaction') #sorts the data frame by reacti
 #cosine scores extraction from the sorted data frame and filtration with a minimum cosine score of 0.9
 cosines_srt = df_data_srt['cosine'].tolist()
 cosines_srt_rnd = [round(cosine, 2) for cosine in cosines_srt]
-cosines_srt_rnd_filt = [0 if x < 0.9 else x for x in cosines_srt_rnd]
+cosines_srt_rnd_filt = [0 if x < 0.9 else x for x in cosines_srt_rnd] #the cosine score threshold can be modified to adjust the level of confidence
 
 #creation of an adapted cosine score array for the cosine score-based heatmap layout
 cosines_sublist = [cosines_srt_rnd_filt[i:i+8] for i in range(0, len(cosines_srt_rnd_filt), 8)]
@@ -73,7 +73,7 @@ for i in range(len(cosines_srt_rnd_filt)):
 relative_abundances_sublist = [relative_abundances_srt_rnd_filt[i:i+8] for i in range(0, len(relative_abundances_srt_rnd_filt), 8)]
 relative_abundances_array = np.array(np.transpose(relative_abundances_sublist))
 
-#preparation of the labels based on the reaction conditions codification
+#preparation of the labels based on the reaction conditions codification (three parameters have been modified herein)
 solv_order = ["1.1/3.1", "1.1/3.2", "1.1/3.3", "1.1/3.4", "1.2/3.1", "1.2/3.2", "1.2/3.3",
                   "1.2/3.4", "1.3/3.1", "1.3/3.2", "1.3/3.3", "1.3/3.4"]
 additive = ["2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8"]
